@@ -10,8 +10,19 @@ body{
 h1{
     font-family: "Montserrat";
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 3.5rem;
     line-height: 1.5;
+}
+h3{
+    font-family: "Montserrat";
+    font-weight: bold;
+
+}
+
+p{
+    color: #8f8f8f;
+    font-family: "Ubuntu";
+    font-size: 1.2rem;
 }
 
 .container-fluid{
@@ -50,4 +61,24 @@ h1{
 
 .title-image{
     width: 50%;
+    transform: rotate(25deg);
+}
+
+/* features section */
+
+#features{
+    padding: 7% 15%;
+}
+
+.feature-box{
+    text-align: center;
+    padding: 5%;
+}
+
+.icon{
+    color: #ef8172;
+    margin-bottom: 1rem;
+}
+.icon:hover{
+    color: #ff4668;
 }
