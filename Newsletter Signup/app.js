@@ -43,6 +43,14 @@ app.post("/", function (req, res)
 
     const request = https.request(url, options, function(response)
     {
+        if (response.statusCode === 200)
+        {
+            res.sendFile(__dirname + "/succes.html")
+        }
+        else
+        {
+            res.sendFile(__dirname + "/failure.html")
+        }
         response.on("data", function(response)
         {
             console.log(JSON.parse(response));
@@ -51,16 +59,17 @@ app.post("/", function (req, res)
 
     request.write(jsonData);
     request.end();
-
-
-
-
 });
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.post("/failure", function(req,res)
+{
+    res.redirect("/");
+})
+
+//app.use(bodyParser.urlencoded({ extended: true }));
 
 
-app.listen(3000, function ()
+app.listen(process.env.PORT || 3000, function ()
 {
     console.log("server running on port 3000");
 })
